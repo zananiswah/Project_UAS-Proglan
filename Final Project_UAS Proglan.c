@@ -413,3 +413,26 @@ int search_database_sekolah(char input[]){
     }
     fclose(fd);
 }
+
+int olah_data (int array[]){
+	omp_set_num_threads(4);
+	float average, sum;
+	
+	//program akan menghitung jumlah total nilai siswa secara parallel
+	#pragma omp parallel
+	{
+		int i;
+		int localsum = 0;
+		
+		#pragma omp for
+		for (i=0;i<14;i++){
+			localsum += array[i];
+		}
+		#pragma omp critical
+		sum += localsum;
+	}
+	average = sum/14;
+	//Mencetak nilai rata-rata siswa
+	printf("\n\t\t\xb3\t\t   RATA-RATA\t\t\t\t\t       \xb3\t %2.f\t     \xb3", average);
+
+}
