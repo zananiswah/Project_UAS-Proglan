@@ -9,6 +9,18 @@ Nama Anggota    :
 Judul Proyek    : Program Perampungan dan Pembuatan SKL (Surat Keterangan Lulus)
 */
 
+//Inisialisasi struct untuk input data siswa
+struct siswa{
+    char nama[SIZE];
+    int sekolah;
+    int nilai[SIZE];
+    char TTL[SIZE];
+    int NIS;
+    int NISN;
+    char kelas[SIZE];
+    struct siswa *next;
+};
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
