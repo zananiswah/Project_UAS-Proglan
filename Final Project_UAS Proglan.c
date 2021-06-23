@@ -149,3 +149,15 @@ int main(){
             goto menu;
     }
 }
+
+int display_menu (){
+	printf("\t\t========================================\n");
+    printf("\t\t\t       MENU LAYANAN\n");
+    printf("\t\t========================================\n\n");
+	printf ("\t\t\t1. Input Data Siswa\n");
+	printf ("\t\t\t2. Lihat Data Siswa\n");
+	printf ("\t\t\t3. Melihat Sekolah\n");
+	printf ("\t\t\t4. Cetak SKL\n");
+	printf ("\t\t\t5. Panduan\n");
+	printf ("\t\t\t6. Keluar\n");
+}
