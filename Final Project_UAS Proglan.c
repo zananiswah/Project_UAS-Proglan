@@ -9,7 +9,7 @@ Nama Anggota    :
 Judul Proyek    : Program Perampungan dan Pembuatan SKL (Surat Keterangan Lulus)
 */
 
-//Inisialisasi struct untuk input data siswa
+
 
 #include <stdio.h>
 #include <string.h>
@@ -20,6 +20,16 @@ Judul Proyek    : Program Perampungan dan Pembuatan SKL (Surat Keterangan Lulus)
 #define MAX_LENGTH 256
 #define SIZE 100
 
+//Inisialisasi function prototype
+int search_database_sekolah(char input[]);
+int display_database_sekolah();
+int display_database_nilai(char nama_pelajaran[][SIZE]);
+int display_menu();
+int display_panduan();
+int input_data(char nama_pelajaran[][SIZE]);
+int olah_data(int array[]);
+
+//Inisialisasi struct untuk input data siswa
 struct siswa{
     char nama[SIZE];
     int sekolah;
@@ -31,6 +41,8 @@ struct siswa{
     struct siswa *next;
 };
 
+int lihat_data_siswa(struct siswa *data,char nama_pelajaran[][SIZE]);
+int cetak_SKL(struct siswa *data1);
 
 int main(){
 	int sentinel_1 = 0;
