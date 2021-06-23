@@ -367,3 +367,49 @@ int display_database_sekolah(){
         goto again;
     }
 }
+
+int search_database_sekolah(char input[]){
+    int temp=0;
+    int counter = 1;
+    char buffer_2[20];
+    char nama[SIZE];
+    int npsn_temp;
+    
+    char *file_database = "database_sekolah.txt";
+    FILE *fd = fopen(file_database,"a++");
+
+    if (fd==NULL){
+        printf("Error, cannot open the file");
+        return 0;
+    }
+	
+    char buffer[MAX_LENGTH];
+    int i;
+
+    for (i=0;i<strlen(input);i++){
+        input[i] = toupper(input[i]);
+    }
+    
+    while (fgets(buffer, MAX_LENGTH, fd)){
+        if (strncmp(buffer,input,strlen(input))==0){
+            printf("\n\t\t%d. %s", counter, buffer);
+            temp=1;
+        }
+        counter++;
+    }
+    
+    //Memasukkan sekolah ke database
+    if (temp==0){
+        printf("\n\t\tNama sekolah Anda tidak terdaftar!");
+        printf("\n\t\tMasukkan nama sekolah Anda (Memasukkan ke dalam database): ");
+        getch();
+        scanf("%[^\n]", &nama);
+        printf("\n\t\tMasukkan NPSN sekolah Anda (Memasukkan ke dalam database): ");
+        scanf("%d", &npsn_temp);
+        for (i=0;i<strlen(nama);i++){
+            nama[i] = toupper(nama[i]);
+        }
+        fprintf(fd,"\n%s;%d",nama,npsn_temp);
+    }
+    fclose(fd);
+}
