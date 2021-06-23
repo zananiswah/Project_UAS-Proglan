@@ -9,8 +9,6 @@ Nama Anggota    :
 Judul Proyek    : Program Perampungan dan Pembuatan SKL (Surat Keterangan Lulus)
 */
 
-
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -43,6 +41,11 @@ struct siswa{
 
 int lihat_data_siswa(struct siswa *data,char nama_pelajaran[][SIZE]);
 int cetak_SKL(struct siswa *data1);
+
+//Inisialisasi struct untuk Linked List
+struct siswa *head = NULL;
+struct siswa *ptr = NULL;
+struct siswa *temp = NULL;
 
 int main(){
 	int sentinel_1 = 0;
