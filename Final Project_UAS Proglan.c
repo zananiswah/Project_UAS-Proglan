@@ -10,6 +10,16 @@ Judul Proyek    : Program Perampungan dan Pembuatan SKL (Surat Keterangan Lulus)
 */
 
 //Inisialisasi struct untuk input data siswa
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <omp.h>
+
+#define MAX_LENGTH 256
+#define SIZE 100
+
 struct siswa{
     char nama[SIZE];
     int sekolah;
@@ -21,14 +31,6 @@ struct siswa{
     struct siswa *next;
 };
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <omp.h>
-
-#define MAX_LENGTH 256
-#define SIZE 100
 
 int main(){
 	int sentinel_1 = 0;
