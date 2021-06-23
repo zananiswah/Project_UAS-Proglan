@@ -570,3 +570,33 @@ int display_panduan(){
     printf ("\n\n\t Silahkan tekan tombol apapun untuk melanjutkan...");
 	getch();
 }
+
+int keluar(){
+    int pil;
+	system ("cls");
+	printf ("\t\t========================================\n");
+    printf ("\t\t\t      MENU KELUAR\n");
+    printf ("\t\t========================================\n\n");
+	printf ("\n\t\tApakah anda ingin melanjutkan menggunakan program ini?\n\n");
+	printf ("\t\t\t1. Ya\n\t\t\t2. Tidak\n\n");
+	printf ("\t\tPilihan : ");
+	scanf ("%d", &pil);
+	
+	//Kembali ke menu
+	if (pil == 1){
+		system("cls");
+	}
+	//Program berakhir
+	else if (pil == 2){
+		system("cls");
+		printf ("\n\n\t\t\tTerima kasih telah menggunakan program ini!\n");
+		exit (0);
+	}
+	
+	//Terdapat default untuk Error Handling apabila User memasukkan pilihan yang salah
+	else {
+		printf ("\nPilihan yang anda masukkan salah, silahkan coba lagi.\n");
+		sleep(1);
+		keluar();
+	}
+}
