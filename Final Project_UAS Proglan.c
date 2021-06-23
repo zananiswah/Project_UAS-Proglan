@@ -7,6 +7,7 @@ Nama Anggota    :
         - Steven Yosua Saputra    (2006577290)
         - Zana Niswah Awahita     (2006577593)
 Judul Proyek    : Program Perampungan dan Pembuatan SKL (Surat Keterangan Lulus)
+*/
 
 #include <stdio.h>
 #include <string.h>
