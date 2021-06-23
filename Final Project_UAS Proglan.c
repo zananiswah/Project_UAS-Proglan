@@ -554,3 +554,19 @@ int cetak_SKL(struct siswa *data1){
 		}
 	}
 }
+
+int display_panduan(){
+    system ("cls");
+	printf("\t===================================================================================\n");
+    printf("\t\t\t\t\t\tPANDUAN\n");
+    printf("\t===================================================================================\n\n");
+    printf ("\t Program ini merupakan layanan pembuatan SKL(Surat Keterangan Lulus) untuk siswa.\n");
+    printf ("\t Tujuan dari pembuatan program ini akan memudahkan sekolah dalam menyimpan data");
+    printf ("\n\t peserta didik serta mencetak SKL.\n");
+    printf ("\n\t Pengguna akan memasukkan data berupa:\n\t\t 1.Nama Siswa \n\t\t 2.Tempat Tanggal Lahir ");
+    printf ("\n\t\t 3.NIS \n\t\t 4.NISN \n\t\t 5.Kelas \n\t\t 6.Nilai");
+    printf ("\n\n\t Kemudian program akan mengolah nilai dengan menampilkan hasil nilai rata-rata");
+    printf ("\n\t serta program juga dapat mencetak SKL tersebut.");
+    printf ("\n\n\t Silahkan tekan tombol apapun untuk melanjutkan...");
+	getch();
+}
