@@ -186,3 +186,83 @@ int display_database_nilai(char nama_pelajaran[][SIZE]){
     fclose(fd);
 }
 
+int input_data(char nama_pelajaran[][SIZE]){
+    int sentinel = 1;
+    int i;
+    char answer;
+    
+	system("cls");
+	printf("\t\t==========================================================\n");
+	printf("\t\t\t\t\tInput Data           \n");
+	printf("\t\t==========================================================\n");
+
+    while(sentinel != -1){
+        temp = malloc(sizeof(struct siswa));
+        ptr=head;
+        printf("\n\t\tCatatan:\n\t\tNomor indeks sekolah dapat dilihat pada menu nomor 3.\n");
+        //User menginput data sesuai kebutuhan program
+        printf("\n\t\tNama\t\t\t: ");
+        scanf(" %[^\n]", temp->nama);
+        input_indeks:
+        printf ("\n\t\tIndeks Sekolah\t\t: ");
+        scanf (" %d",&temp->sekolah);
+        printf("\n\t\tTempat, tanggal lahir\t: ");
+        scanf(" %[^\n]", temp->TTL);
+        printf("\n\t\tNIS\t\t\t: ");
+        scanf(" %d", &temp->NIS);
+        printf("\n\t\tNISN\t\t\t: ");
+    	scanf(" %d", &temp->NISN);
+        printf("\n\t\tKelas\t\t\t: ");
+        scanf(" %[^\n]", temp->kelas);
+        for (i=0;i<14;i++){
+            printf("\n\t\tNilai %s\t: ", nama_pelajaran[i]);
+            scanf(" %d", &temp->nilai[i]);
+            if( temp->nilai[i] < 0 || temp->nilai[i] > 100){
+                while(temp->nilai[i] < 0 || temp->nilai[i] > 100){
+                    printf("\n\t\tMasukkan kembali nilai %s\t: ", nama_pelajaran[i]);
+                    scanf(" %d", &temp->nilai[i]);
+                }
+            } 
+            else{
+                continue;
+            }
+        }
+	    temp->next=NULL;
+	    
+	    printf("\n\t\t_____________________________________________________________");
+	    answer:
+	    printf("\n\n\t\tApakah Anda ingin memasukkan data kembali? (Y/N)");
+	    printf("\n\t\tKetik Pilihan (Y=Ya)(N=Tidak): ");
+	    scanf("%s", &answer);
+	            
+	    if(answer=='y'||answer=='Y'){
+	        if(head==NULL){
+	            head = temp;
+	            continue;
+	        }
+	        while(ptr->next!=NULL){
+	            ptr=ptr->next;
+	        }
+		    ptr->next=temp;
+		    continue;
+	    }
+	                
+	    else if(answer=='n'||answer=='N'){
+	        if(head==NULL){
+	            head = temp;
+	            break;
+	        }
+	        while(ptr->next!=NULL){
+	            ptr=ptr->next;
+	        }
+	        ptr->next=temp;
+	        sentinel=-1;
+	        continue;
+	    }
+	    else{
+	        printf("\n\t\tInputan yang Anda masukkan salah.\n\t\tSilahkan memasukkan kembali input Anda.");
+	        printf("\n\t\t_____________________________________________________________");
+	        goto answer;
+	    }
+    }
+}
