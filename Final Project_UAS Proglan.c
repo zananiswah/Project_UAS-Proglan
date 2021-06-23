@@ -149,3 +149,28 @@ int main(){
             goto menu;
     }
 }
+
+int display_database_nilai(char nama_pelajaran[][SIZE]){
+	//Program membuka file database dari .txt
+    char *file_database = "database_nilai.txt";
+    FILE *fd = fopen(file_database,"r");
+    int i=0, j=0;
+
+    if(fd==NULL){
+        printf("Error, cannot open the file");
+        return 0;
+    }
+
+    char buffer[MAX_LENGTH];
+    while (fgets(buffer, MAX_LENGTH, fd)){
+    	for (i=0;i<strlen(buffer);i++){
+            if (buffer[i]==';'){
+            	break;
+            }
+            nama_pelajaran[j][i]=buffer[i];
+        }
+        j++;
+    }
+    fclose(fd);
+}
+
