@@ -318,3 +318,52 @@ int lihat_data_siswa(struct siswa *data, char nama_pelajaran[][SIZE]){
     	}
     }
 }
+
+int display_database_sekolah(){
+    int i;
+    int counter=1;
+    char temp;
+    char *file_database = "database_sekolah.txt";
+    FILE *fd = fopen(file_database,"r");
+
+    if (fd==NULL){
+        printf("\n\t\tError, cannot open the file");
+        return 0;
+    }
+
+    char buffer[MAX_LENGTH];
+    
+    printf("\t\t===========================================\n");
+    printf("\t\t\t\tLIST SEKOLAH\n");
+    printf("\t\t===========================================\n\n");
+    //Menampilkan list sekolah beserta NPSN yang telah terdaftar di database
+    while (fgets(buffer, MAX_LENGTH, fd)){
+        printf("\t\t %d. ", counter);
+        for (i=0;i<strlen(buffer);i++){
+            if (buffer[i]==';'){
+                printf(" ");
+                continue;
+            }
+            printf("%c", buffer[i]);
+        }
+        counter++;
+    }
+    fclose(fd);
+    
+    again:
+    printf("\n\n\t\tApakah Anda ingin mencari nama sekolah Anda (Y/N)\n\t\tKetik Pilihan (Y=Ya)(N=Tidak): ");
+    //getch();
+    scanf("%s", &temp);
+    if (temp=='Y'||temp=='y'){
+        system("cls");
+        return 1;
+    }
+    else if(temp=='N'||temp=='n'){
+        system("cls");
+        return 0;
+    }
+    else{
+        printf("\n\t\t Pilihan Anda tidak sesuai.\n\t\t Silahkan memasukkan kembali pilihan Anda\n\n");
+        goto again;
+    }
+}
