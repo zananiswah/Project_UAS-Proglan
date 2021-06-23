@@ -1,2 +1,2 @@
 # Project_UAS-Proglan
- Proyek Akhir Pemrograman Lanjut Semester 2
+This source code is made by Amanda Fairuz Syifa (2006535653), Firzy Allen (2006577555), Steven Yosua Saputra (2006577290), Zana Niswah Awahita     (2006577593) as final programming assignment in Even Semester 2020/2021 for course Advance Programming + Lab. (ENCE602003) in Undergraduate of Computer Engineering study program, Department of Electrical Engineering, Faculty of Engineering, Universitas Indonesia.
