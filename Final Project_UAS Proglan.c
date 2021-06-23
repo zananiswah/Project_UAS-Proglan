@@ -266,3 +266,55 @@ int input_data(char nama_pelajaran[][SIZE]){
 	    }
     }
 }
+
+int lihat_data_siswa(struct siswa *data, char nama_pelajaran[][SIZE]){
+    int i;
+    int counter=7;
+    int j=1;
+    int sentinel = 1;
+    data = head;
+    char buffer[MAX_LENGTH];
+    
+    printf ("\t\t========================================\n");
+    printf ("\t\t\t\tDATA SISWA\n");
+    printf ("\t\t========================================\n\n");
+    
+    while(sentinel==1){
+    	//Menampilkan hasil input sesuai dengan input user
+	    printf("\n\t\t1. Nama \t\t: %s", data->nama);
+        printf ("\n\t\t2. Nama Sekolah \t: ");
+        char *file_database = "database_sekolah.txt";
+    	FILE *fd = fopen(file_database,"r");
+    	
+	    while (fgets(buffer, MAX_LENGTH, fd)){
+	       if (j==data->sekolah){
+				for (i=0;i<strlen(buffer);i++){
+		            if (buffer[i]==';'){
+		                printf(" ");
+		                continue;
+		            }
+		            printf("%c", buffer[i]);
+		        }
+		        fclose(fd);
+		    }
+		    j++;
+		}
+        printf("\t\t3. TTL \t\t\t: %s", data->TTL);
+        printf("\n\t\t4. NIS \t\t\t: %d", data->NIS);
+        printf("\n\t\t5. NISN \t\t: %d", data->NISN);
+        printf("\n\t\t6. Kelas \t\t: %s", data->kelas);
+        
+        for(i=0;i<14;i++){
+            printf("\n\t\t%d. Nilai Siswa %s: %d",counter++,nama_pelajaran[i],data->nilai[i]);  
+        }  
+        
+        data=data->next;
+        j=1;
+        counter = 7;
+        printf("\n\t\t_____________________________________________________________\n");
+        
+        if(data == NULL){
+            sentinel = -1;
+    	}
+    }
+}
