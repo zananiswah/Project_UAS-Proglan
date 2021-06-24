@@ -92,7 +92,7 @@ Menu ke-5, **Panduan**, adalah menu yang berfungsi untuk menampilkan penjelasan 
 <!-- LICENSE -->
 ## Lisensi
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the Creative Common.
 
 
 
