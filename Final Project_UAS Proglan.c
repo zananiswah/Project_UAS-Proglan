@@ -446,21 +446,30 @@ int search_database_sekolah(char input[]){
 int olah_data (int array[]){
 	omp_set_num_threads(4);
 	float average, sum;
+	int i;
 	
 	//program akan menghitung jumlah total nilai siswa secara parallel
+	#pragma omp task shared(i)
+	i = 0;
+	
 	#pragma omp parallel
 	{
-		int i;
 		int localsum = 0;
 		
 		#pragma omp for
-		for (i=0;i<14;i++){
+		for (i = 0; i < 14; i++){
 			localsum += array[i];
 		}
 		#pragma omp critical
 		sum += localsum;
 	}
-	average = sum/14;
+	
+	#pragma omp master
+	{
+		#pragma omp taskwait
+		average = sum/14;
+	}
+	
 	//Mencetak nilai rata-rata siswa
 	printf("\n\t\t\xb3\t\t   RATA-RATA\t\t\t\t\t       \xb3\t %2.f\t     \xb3", average);
 
