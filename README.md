@@ -62,7 +62,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Tentang Proyek
 
-![tampilan awal program](https://imgur.com/82p6FHB)
+![tampilan_awal](https://user-images.githubusercontent.com/72308202/123299060-56293b80-d543-11eb-9727-992aaf81c52e.png)
 
 Program perampungan dan pembuatan SKL (Surat Keterangan Lulus) ini merupakan program yang bertujuan untuk memudahkan sekolah dalam menyimpan data peserta didik serta mencetak SKL. User dapat memilih menu yang ingin dijalankan sesuai dengan kebutuhannya.
 
@@ -83,8 +83,7 @@ Menu ke-2, yaitu **Lihat Data Siswa** dapat menampilak seluruh hasil input yang 
 Sementara menu ketiga, adalah menu yang berfungsi untuk menampilkan **List Sekolah** beserta nomor indeks dan NPSN-nya. Menu ini diharapkan diakses oleh user sebelum menginput data dengan tujuan untuk mengetahui nomor indeks sekolah yang dibutuhkan pada menu Input Data Siswa. Selain menampilkan list sekolah yang telah terdaftar, apabila sekolah yang diinginkan belum tercantum dalam list, user juga dapat menambahkan sekolah tersebut dengan cara mendaftarkannya.
 
 Sementara menu ke-4, **Cetak SKL**, adalah menu yang digunakan untuk mencetak SKL dengan data-data sesuai input user, dilengkapi pula dengan keterangan LULUS/TIDAK LULUS, serta rata-rata yang diperoleh dari perhitungan 14 nilai mata pelajaran.
-
-
+![cetak_skl](https://user-images.githubusercontent.com/72308202/123299206-79ec8180-d543-11eb-9c77-3f55ab4ed62e.png)
 
 Menu ke-5, **Panduan**, adalah menu yang berfungsi untuk menampilkan penjelasan prosedur penggunaan program. Dan menu terakhir adalah menu yang akan digunakan ketika user akan keluar dari program. Menu ini akan meminta konfirmasi apakah user benar-benar ingin keluar atau kembali menggunakan program.
 
